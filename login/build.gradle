@@ -1,0 +1,15 @@
+apply from: "$rootDir/common-android-dynamic-feature.gradle"
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.dataLogin)
+
+    implementation SupportLibraries.design
+    implementation SupportLibraries.appcompat
+    implementation SupportLibraries.constraintLayout
+
+    implementation Libraries.koinAndroid
+    implementation Libraries.koinViewModel
+}

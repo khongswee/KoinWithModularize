@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KoinWithModularize</string>
+    <string name="title_core">Module Title</string>
+    <string name="title_data_login">Module Title</string>
+    <string name="title_login">Module Title</string>
+    <string name="title_activity_login">Sign in</string>
+</resources>
