@@ -3,7 +3,7 @@ package com.kho.koin.withmodularize.ui.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.kho.koin.withmodularize.R
-import com.kho.koin.withmodularize.core.navigator.LoginActivityNavigator
+import com.kho.koin.withmodularize.navigator.LoginActivityNavigator
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         goToLogin()
     }
 
-    private fun goToLogin(){
+    private fun goToLogin() {
         val intent = LoginActivityNavigator.dynamicStart
         startActivity(intent)
     }

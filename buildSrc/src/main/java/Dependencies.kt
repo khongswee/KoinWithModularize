@@ -9,6 +9,8 @@ object Modules {
     val dataLogin = ":data_login"
     val dataHome = "data_home"
     val core = ":core"
+    val navigator = ":navigator"
+
 
 }
 

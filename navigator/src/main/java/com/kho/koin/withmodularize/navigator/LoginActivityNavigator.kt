@@ -1,4 +1,4 @@
-package com.kho.koin.withmodularize.core.navigator
+package com.kho.koin.withmodularize.navigator
 
 import android.content.Intent
 

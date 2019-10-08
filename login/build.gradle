@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 dependencies {
     implementation project(Modules.core)
     implementation project(Modules.dataLogin)
+    implementation project(Modules.navigator)
 
     implementation SupportLibraries.design
     implementation SupportLibraries.appcompat
