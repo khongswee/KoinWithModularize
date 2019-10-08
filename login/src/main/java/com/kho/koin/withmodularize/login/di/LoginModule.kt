@@ -1,5 +1,6 @@
 package com.kho.koin.withmodularize.login.di
 
+import com.kho.koin.withmodularize.core.TestInject
 import com.kho.koin.withmodularize.core.di.ModuleInject
 import com.kho.koin.withmodularize.core.domain.DeferredHelper.create
 import com.kho.koin.withmodularize.data.login.api.LoginService
@@ -11,6 +12,7 @@ import com.kho.koin.withmodularize.login.domain.LoginUsecase
 import com.kho.koin.withmodularize.login.viewmodel.LoginViewmodel
 import kotlinx.coroutines.Deferred
 import org.koin.core.context.loadKoinModules
+import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import java.util.concurrent.CompletableFuture
@@ -21,6 +23,19 @@ object LoginModule : ModuleInject {
         loadKoinModules(
             listOf(viewModel, usecase, repository, service)
         )
+    }
+
+    private val testInject : Module = module {
+        single{ TestInject("Login") }
+    }
+
+    override fun dropFeature(): Unit? {
+//        return unloadKoinModules(listOf(testInject))
+        return null
+    }
+
+    override fun injectFeature() {
+        loadModule
     }
 
     private val service: Module = module {
@@ -46,12 +61,4 @@ object LoginModule : ModuleInject {
         factory { LoginViewmodel(get()) }
     }
 
-
-    override fun dropFeature(): Unit? {
-        return null
-    }
-
-    override fun injectFeature() {
-        loadModule
-    }
 }
