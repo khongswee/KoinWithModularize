@@ -1,1 +1,1 @@
-include ':app', ':buildSrc', ':core', ':data_login', ':login', ':navigator'
+include ':app', ':buildSrc', ':core', ':data_login', ':login', ':navigator', ':home'

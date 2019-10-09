@@ -5,4 +5,6 @@
     <string name="title_login">Module Title</string>
     <string name="title_activity_login">Sign in</string>
     <string name="title_navigator">Module Title</string>
+    <string name="title_home">Module Title</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>

@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/data_login" />
+            <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/navigator" />
           </set>

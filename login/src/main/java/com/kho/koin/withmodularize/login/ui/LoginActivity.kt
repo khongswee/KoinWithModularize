@@ -10,14 +10,14 @@ import com.kho.koin.withmodularize.core.ui.BaseActivity
 import com.kho.koin.withmodularize.login.R
 import com.kho.koin.withmodularize.login.di.LoginModule
 import com.kho.koin.withmodularize.login.viewmodel.LoginViewmodel
+import com.kho.koin.withmodularize.navigator.HomeActivityNavigator
 import kotlinx.android.synthetic.main.activity_login.*
-import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : BaseActivity() {
 
-    private val testInject : TestInject by inject()
+    private val testInject: TestInject by inject()
 
     override fun getDi(): ModuleInject? {
         return LoginModule
@@ -30,7 +30,7 @@ class LoginActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
         handleLogin()
         handelResponse()
-        Log.d("Login",testInject.getKey())
+        Log.d("Login", testInject.getKey())
     }
 
     private fun handleLogin() {
@@ -43,8 +43,14 @@ class LoginActivity : BaseActivity() {
 
     private fun handelResponse() {
         loginViewModel.message.observe(this, Observer {
-            Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+            goToHomePage()
         })
+    }
+
+    private fun goToHomePage() {
+        val intent = HomeActivityNavigator.dynamicStart
+        startActivity(intent)
     }
 
 }
